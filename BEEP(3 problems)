@@ -1,0 +1,64 @@
+//1
+#include <windows.h>
+#include <iostream>
+using namespace std;
+int main() {
+
+  int x;
+  cout << "give me a number" << endl;
+  cin >> x;
+
+  cout << "How many notes do you want to play ?" << endl;
+  for (int i = 0; i < x; i++) {
+      cout << i << " ";
+      Beep(1000, 100);
+  }
+
+}
+
+
+//2
+#include <windows.h>
+#include <iostream>
+using namespace std;
+
+int main() {
+
+int input;
+cout << "input a number" << endl;
+cin >> input;
+
+for (int i = 0; i < input; i++)
+Beep(300 + i *20, 200);
+}
+
+
+
+//3
+#include <iostream>
+#include <windows.h>
+#include <ratio>
+
+using namespace std;
+
+
+void randombeep(int num);
+
+
+int main(int num) {
+srand(time(NULL));
+cout << "give me a number" << endl;
+cin >> num;
+randombeep(num);
+}
+
+
+void randombeep(int num) {
+for (int i = 0; i < num; i++) {
+cout << i << " ";
+int num = rand() % 1000 + 300;
+int num2 = rand() % 1000 + 300;
+Beep(num, num2);
+}
+
+}
